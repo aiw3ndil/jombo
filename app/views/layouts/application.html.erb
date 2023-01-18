@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jombo</title>
+    <title>jombo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,10 +12,20 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </main>
+    <div class="min-h-full">
+      <%= render "layouts/header" %>
+
+      <main>
+        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          <!-- Replace with your content -->
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <div class="px-4 py-6 sm:px-0">
+            <%= yield %>
+          </div>
+          <!-- /End replace -->
+        </div>
+      </main>
   </body>
 </html>
