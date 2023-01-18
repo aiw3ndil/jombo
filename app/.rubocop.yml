@@ -1,0 +1,40 @@
+# For cops and examples:
+# https://github.com/rubocop-hq/rubocop-rails/tree/master/lib/rubocop/cop/rails
+
+require:
+  - rubocop-rails
+  # - rubocop-rspec Disabled because it gets a lot of weird errors that we need to investigate
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - '**/tmp/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - '**/vendor/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+# Commonly used screens these days easily fit more than 80 characters.
+Layout/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Max: 50
+  Exclude:
+    - spec/**/*
+
+Naming/MemoizedInstanceVariableName:
+  EnforcedStyleForLeadingUnderscores: required
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - uat
+    - production
