@@ -10,9 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_180630) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_134413) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "street"
+    t.string "city"
+    t.string "region"
+    t.string "postal_code"
+    t.string "country"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.datetime "start_date"
+    t.geometry "source", limit: {:srid=>0, :type=>"st_point"}
+    t.geometry "destination", limit: {:srid=>0, :type=>"st_point"}
+    t.json "stops"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_trips_on_profile_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_180630) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.boolean "receive_newsletter", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
@@ -40,4 +68,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_180630) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "vehicles", force: :cascade do |t|
+    t.string "type"
+    t.string "brand"
+    t.string "model"
+    t.string "color"
+    t.string "seats_available"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_vehicles_on_profile_id"
+  end
+
+  add_foreign_key "profiles", "users"
+  add_foreign_key "trips", "profiles"
+  add_foreign_key "vehicles", "profiles"
 end
