@@ -6,7 +6,6 @@ class CreateTrips < ActiveRecord::Migration[7.0]
       t.datetime :start_date
       t.st_point :source
       t.st_point :destination
-      t.json :stops
       t.references :profile, null: false, foreign_key: true
 
       t.timestamps

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :stops
   resources :trips
   resources :vehicles
   resources :profiles

@@ -11,6 +11,7 @@ class CreateProfiles < ActiveRecord::Migration[7.0]
       t.string :region
       t.string :postal_code
       t.string :country
+      t.boolean :verified
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
