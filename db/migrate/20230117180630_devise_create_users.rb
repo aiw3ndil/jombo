@@ -32,6 +32,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+      # Omniauth params
+      t.string :provider
+      t.string :uid
+
       # Extra params
       t.boolean :receive_newsletter, default: false
 
