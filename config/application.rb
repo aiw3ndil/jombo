@@ -35,5 +35,8 @@ module Jombo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Default language
+    config.i18n.default_locale = :es
   end
 end

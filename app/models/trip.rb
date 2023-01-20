@@ -23,4 +23,6 @@
 #
 class Trip < ApplicationRecord
   belongs_to :profile
+
+  monetize :price
 end
