@@ -31,6 +31,11 @@ es:
       user:
         one: Usuario
         other: Usuarios
+        attributes:
+          email:
+            taken: El email ya se encuentra en uso
+          password_confirmation:
+            confirmation: Debes confirmar el email
   devise:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
@@ -137,7 +142,6 @@ es:
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       send_paranoid_instructions: Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.
       unlocked: Tu cuenta ha sido desbloqueada. Ya puedes iniciar sesión.
-  errors:
     messages:
       already_confirmed: ya ha sido confirmado, por favor intenta iniciar sesión
       confirmation_period_expired: necesita confirmarse dentro de %{period}, por favor solicita una nueva
