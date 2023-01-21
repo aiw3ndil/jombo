@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="my-5">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
     <%= form.label :username %>
     <%= form.text_field :username, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
@@ -49,11 +54,6 @@
   <div class="my-5">
     <%= form.label :country %>
     <%= form.text_field :country, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="inline">
