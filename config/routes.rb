@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :stops
   resources :trips
   resources :vehicles
-  resources :profiles
+  resource :profile, path: 'me'
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
