@@ -59,8 +59,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-gem 'omniauth-rails_csrf_protection'
-
 # database schema
 gem 'annotate'
 
