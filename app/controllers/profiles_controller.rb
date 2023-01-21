@@ -3,11 +3,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[show edit update destroy]
 
-  # GET /profiles or /profiles.json
-  def index
-    @profiles = Profile.all
-  end
-
   # GET /profiles/1 or /profiles/1.json
   def show; end
 
