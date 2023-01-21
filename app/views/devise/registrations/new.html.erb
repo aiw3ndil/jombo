@@ -1,29 +1,29 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_for(resource, as: resource_name, url: new_registration_path(resource_name)) do |f| %>
+  <div class="mb-6">
+    <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.email_placeholder') %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="mb-6">
+    <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="mb-6">
+    <%= f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <% if devise_mapping.rememberable? %>
+    <div class="flex items-start mb-6">
+      <div class="flex items-center h-5">
+        <%= f.check_box :remember_me, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" %>
+      </div>
+      <%= f.label :remember_me, class: "ml-2 text-sm font-medium text-gray-900" %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Registrarte", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
+</form>
 <% end %>
-
-<%= render "devise/shared/links" %>
