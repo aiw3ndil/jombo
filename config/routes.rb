@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   resources :trips
   resources :vehicles
   resources :profiles
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords',
+    confirmations: 'users/confirmations'
+  }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,7 +23,7 @@ Rails.application.routes.draw do
     authenticated :users do
       root 'home#index', as: :authenticated_root
     end
-  
+
     unauthenticated do
       root 'home#index', as: :unauthenticated_root
     end
