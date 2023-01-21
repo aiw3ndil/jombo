@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @title = "Editar perfil"
+    @title = "Perfil"
   end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
