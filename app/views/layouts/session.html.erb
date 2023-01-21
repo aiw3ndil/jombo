@@ -12,20 +12,19 @@
   </head>
 
   <body>
-    <div class="min-h-full">
-      <%= render "layouts/header" %>
+    <%= render "layouts/header" %>
 
-      <main>
-        <div class="h-screen mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+    <main>
+      <div class="h-screen mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-          <div class="px-4 py-6 sm:px-0">
-            <%= yield %>
-          </div>
+        <div class="px-4 py-6 sm:px-0">
+          <%= yield %>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <%= render "layouts/footer" %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
