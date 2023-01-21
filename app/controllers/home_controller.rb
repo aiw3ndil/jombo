@@ -2,11 +2,11 @@
 
 class HomeController < ApplicationController
   def index
-    @title = '¡Bienvenido a jombo!'
-
     if user_signed_in?
+      @title = 'Dashboard'
       render "dashboard"
     else
+      @title = '¡Bienvenido a jombo!'
       render "index"
     end
   end
