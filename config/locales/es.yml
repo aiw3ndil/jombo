@@ -30,6 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%A %d de %B"
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+  time:
+    formats:
+      default: "%H:%M"
+      long: "%B %d, %Y %H:%M"
   hola: "Hola mundo"
   views:
     session:
