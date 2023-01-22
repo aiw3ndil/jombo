@@ -36,7 +36,6 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
-  after_create :init_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -47,9 +46,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
-  def init_profile
-    self.create_profile!
-  end
+  accepts_nested_attributes_for :profile
 
   def self.from_omniauth(auth)
     name_split = auth.info.name.split

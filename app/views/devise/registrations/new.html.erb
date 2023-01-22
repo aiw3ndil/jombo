@@ -2,19 +2,36 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <%= f.fields_for :profile do |pf| %>
+    <div class="mb-6 w-96">
+      <%= pf.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= pf.text_field :first_name, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.first_name') %>
+    </div>
+
+    <div class="mb-6 w-96">
+      <%= pf.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= pf.text_field :last_name, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.last_name') %>
+    </div>
+
+    <div class="mb-6 w-96">
+      <%= pf.label :username, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%= pf.text_field :username, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.username') %>
+    </div>
+  <% end %>
+
   <div class="mb-6 w-96">
     <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.email_placeholder') %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.email') %>
   </div>
 
   <div class="mb-6 w-96">
     <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.password') %>
   </div>
 
   <div class="mb-6 w-96">
     <%= f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
+    <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.password_confirmation') %>
   </div>
 
   <%= f.submit "Registrarte", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>

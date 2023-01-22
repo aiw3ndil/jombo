@@ -41,12 +41,16 @@ es:
     formats:
       default: "%H:%M"
       long: "%B %d, %Y %H:%M"
-  hola: "Hola mundo"
   views:
     session:
       new:
-        email_placeholder: email o nombre de usuario
-        password_placeholder: contraseña
+        placeholder:
+          first_name: nombre
+          last_name: apellido
+          email: email o nombre de usuario
+          username: nombre de usuario
+          password: contraseña
+          password_confirmation: confirmación de la contraseña
   errors:
     messages:
       not_saved: No se ha podido guardar
@@ -62,3 +66,16 @@ es:
               blank: El email no puede estar en blanco
             password_confirmation:
               confirmation: Debes confirmar el email
+        profile:
+          one: Perfil
+          other: Perfiles
+          attributes:
+            username:
+              taken: El nombre de usuario ya se encuentra en uso
+              blank: El usuario no puede estar en blanco
+    attributes:
+      profile:
+        first_name: Nombre
+        last_name: Apellido
+        username: Nombre de usuario
+
