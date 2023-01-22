@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_profile, only: %i[show edit update destroy]
 
   # GET /profiles/1 or /profiles/1.json

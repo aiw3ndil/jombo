@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class StopsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_stop, only: %i[show edit update destroy]
 
   # GET /stops or /stops.json
