@@ -14,6 +14,7 @@ class TripsController < ApplicationController
 
   # GET /trips/new
   def new
+    @title = "Viajes"
     @trip = Trip.new
   end
 

@@ -4,12 +4,13 @@
 #
 # Table name: stops
 #
-#  id         :bigint           not null, primary key
-#  duration   :integer
-#  place      :geometry         point, 0
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  trip_id    :bigint           not null
+#  id          :bigint           not null, primary key
+#  description :string
+#  duration    :integer
+#  place       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  trip_id     :bigint           not null
 #
 # Indexes
 #

@@ -13,6 +13,7 @@
 #  region      :string
 #  street      :string
 #  username    :string
+#  verified    :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :bigint           not null

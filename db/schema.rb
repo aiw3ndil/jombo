@@ -13,7 +13,6 @@
 ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "postgis"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
     t.string "region"
     t.string "postal_code"
     t.string "country"
+    t.boolean "verified"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,7 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
 
   create_table "stops", force: :cascade do |t|
     t.integer "duration"
-    t.geometry "place", limit: {:srid=>0, :type=>"st_point"}
+    t.string "place"
+    t.string "description"
     t.bigint "trip_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,9 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
 
   create_table "trips", force: :cascade do |t|
     t.datetime "start_date"
-    t.geometry "source", limit: {:srid=>0, :type=>"st_point"}
-    t.geometry "destination", limit: {:srid=>0, :type=>"st_point"}
-    t.json "stops"
+    t.string "source"
+    t.string "destination"
+    t.text "comments"
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,6 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "provider"
+    t.string "uid"
     t.boolean "receive_newsletter", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

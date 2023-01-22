@@ -5,10 +5,10 @@
 # Table name: trips
 #
 #  id          :bigint           not null, primary key
-#  destination :geometry         point, 0
-#  source      :geometry         point, 0
+#  comments    :text
+#  destination :string
+#  source      :string
 #  start_date  :datetime
-#  stops       :json
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  profile_id  :bigint           not null
