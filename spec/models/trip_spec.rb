@@ -4,14 +4,15 @@
 #
 # Table name: trips
 #
-#  id          :bigint           not null, primary key
-#  comments    :text
-#  destination :string
-#  source      :string
-#  start_date  :datetime
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  profile_id  :bigint           not null
+#  id              :bigint           not null, primary key
+#  comments        :text
+#  destination     :string
+#  seats_available :integer          default(0)
+#  source          :string
+#  start_date      :datetime
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  profile_id      :bigint           not null
 #
 # Indexes
 #

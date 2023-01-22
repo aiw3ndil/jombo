@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
     t.datetime "start_date"
     t.string "source"
     t.string "destination"
+    t.integer "seats_available", default: 0
     t.text "comments"
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
@@ -113,7 +114,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
     t.string "brand"
     t.string "model"
     t.string "color"
-    t.string "seats_available"
     t.bigint "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
