@@ -62,9 +62,6 @@ gem 'omniauth-facebook'
 # database schema
 gem 'annotate'
 
-# Money
-gem 'money-rails', '~>1.12'
-
 group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
