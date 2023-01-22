@@ -24,10 +24,11 @@ class TripsController < ApplicationController
   # POST /trips or /trips.json
   def create
     @trip = Trip.new(trip_params)
+    @trip.profile_id = current_user.id
 
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to trip_url(@trip), notice: 'Trip was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Trip was successfully created.' }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -68,6 +69,6 @@ class TripsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def trip_params
-    params.require(:trip).permit(:start_date, :source, :destination, :stops, :profile_id)
+    params.require(:trip).permit(:start_date, :source, :destination, :stops)
   end
 end
