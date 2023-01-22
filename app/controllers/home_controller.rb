@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     if user_signed_in?
       @title = 'Dashboard'
+      @trips = Trip.all
       render "dashboard"
     else
       @title = '¡Bienvenido a jombo!'
@@ -13,5 +14,6 @@ class HomeController < ApplicationController
 
   def dashboard
     @title = 'Dashboard'
+    @trips = Trip.all
   end
 end
