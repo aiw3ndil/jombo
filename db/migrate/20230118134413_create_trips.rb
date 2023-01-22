@@ -6,7 +6,7 @@ class CreateTrips < ActiveRecord::Migration[7.0]
       t.datetime :start_date
       t.string :source
       t.string :destination
-      t.integer :seats_available
+      t.integer :seats_available, default: 0
       t.text :comments
       t.references :profile, null: false, foreign_key: true
 

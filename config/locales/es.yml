@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Confirmar cambios al %{model}"
   date:
     formats:
       default: "%Y-%m-%d"
@@ -55,6 +59,9 @@ es:
     messages:
       not_saved: No se ha podido guardar
   activerecord:
+    models:
+      trip: Viaje
+      profile: Perfil
     errors:
       models:
         user:
@@ -78,4 +85,9 @@ es:
         first_name: Nombre
         last_name: Apellido
         username: Nombre de usuario
+      trip:
+        source: Origen
+        destination: Destino
+        seats_available: Asientos disponibles
+        comments: Comentarios
 

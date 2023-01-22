@@ -3,15 +3,14 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_profile, only: %i[show edit update destroy]
+  before_action :set_title
 
   # GET /profiles/1 or /profiles/1.json
   def show
-    @title = 'Perfil'
   end
 
   # GET /profiles/1/edit
   def edit
-    @title = "Perfil"
   end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
@@ -38,6 +37,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def set_title
+    @title = "Perfil"
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_profile

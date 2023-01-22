@@ -3,6 +3,7 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_trip, only: %i[show edit update destroy]
+  before_action :set_title
 
   # GET /trips or /trips.json
   def index
@@ -62,6 +63,10 @@ class TripsController < ApplicationController
 
   private
 
+  def set_title
+    @title = "Viajes"
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_trip
     @trip = Trip.find(params[:id])
@@ -69,6 +74,6 @@ class TripsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def trip_params
-    params.require(:trip).permit(:start_date, :source, :destination, :stops)
+    params.require(:trip).permit(:start_date, :source, :destination, :seats_available, :stops)
   end
 end
