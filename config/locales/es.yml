@@ -85,7 +85,13 @@ es:
         first_name: Nombre
         last_name: Apellido
         username: Nombre de usuario
+        street: Dirección
+        city: Ciudad
+        region: Región
+        postal_code: Código postal
+        country: País
       trip:
+        start_date: Fecha de inicio
         source: Origen
         destination: Destino
         seats_available: Asientos disponibles

@@ -31,7 +31,7 @@ class Profile < ApplicationRecord
   has_one :vehicle
   has_many :trips
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
 
   has_one_attached :avatar
 end
