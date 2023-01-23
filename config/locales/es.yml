@@ -62,6 +62,7 @@ es:
     models:
       trip: Viaje
       profile: Perfil
+      vehicle: Vehículo
     errors:
       models:
         user:
@@ -96,4 +97,14 @@ es:
         destination: Destino
         seats_available: Asientos disponibles
         comments: Comentarios
+      vehicle:
+        vehicle_type:
+          one: Tipo de vehículo
+          car: coche
+          motorbike: motocicleta
+          truck: camión
+          bus: autobús
+        color:
+          one: Color
+          black: negro
 

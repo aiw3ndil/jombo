@@ -3,6 +3,7 @@
 class VehiclesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_vehicle, only: %i[show edit update destroy]
+  before_action :set_title
 
   # GET /vehicles or /vehicles.json
   def index
@@ -23,6 +24,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles or /vehicles.json
   def create
     @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.profile_id = current_user.id
 
     respond_to do |format|
       if @vehicle.save
@@ -60,6 +62,10 @@ class VehiclesController < ApplicationController
 
   private
 
+  def set_title
+    @title = "Mis vehículos"
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_vehicle
     @vehicle = Vehicle.find(params[:id])
@@ -67,6 +73,6 @@ class VehiclesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def vehicle_params
-    params.require(:vehicle).permit(:type, :brand, :model, :color, :seats_available, :profile_id)
+    params.require(:vehicle).permit(:type, :brand, :model, :color, :profile_id)
   end
 end

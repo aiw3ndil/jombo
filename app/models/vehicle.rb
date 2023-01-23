@@ -23,4 +23,30 @@
 #
 class Vehicle < ApplicationRecord
   belongs_to :profile
+
+  enum vehicle_type: {
+    car: 'car',
+    motorbike: 'motorbike',
+    truck: 'truck',
+    bus: 'bus'
+  }
+
+  enum color: {
+    black: 'black',
+    silver: 'silver',
+    gray: 'gray',
+    white: 'white',
+    maroon: 'maroon',
+    red: 'red',
+    purple: 'purple',
+    fuchsia: 'fuchsia',
+    green: 'green',
+    lime: 'lime',
+    olive: 'olive',
+    yellow: 'yellow',
+    navy: 'navy',
+    blue: 'blue',
+    teal: 'teal',
+    aqua: 'aqua'
+  }
 end
