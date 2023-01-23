@@ -11,12 +11,17 @@ class TripsController < ApplicationController
   end
 
   # GET /trips/1 or /trips/1.json
-  def show; end
+  def show
+  end
 
   # GET /trips/new
   def new
-    @title = "Viajes"
-    @trip = Trip.new
+    if current_user.profile.vehicle.present?
+      @title = "Viajes"
+      @trip = Trip.new
+    else
+      redirect_to new_vehicle_path, flash: { notice: "Primero debes añadir un vehículo" }
+    end
   end
 
   # GET /trips/1/edit

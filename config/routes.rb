@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   resources :stops
   resources :trips
-  resources :vehicles
+  resource :vehicle
   resource :profile, path: 'me'
 
   devise_for :users, controllers: {

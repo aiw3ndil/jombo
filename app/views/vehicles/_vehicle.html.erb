@@ -1,32 +1,13 @@
-<div id="<%= dom_id vehicle %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Type:</strong>
-    <%= vehicle.vehicle_type %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Brand:</strong>
-    <%= vehicle.brand %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Model:</strong>
-    <%= vehicle.model %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Color:</strong>
-    <%= vehicle.color %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Profile:</strong>
-    <%= vehicle.profile_id %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this vehicle", vehicle, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this vehicle', edit_vehicle_path(vehicle), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div class="flex flex-row max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="basis-1/4">
+    <svg class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </div>
+  <div class="basis-3/4">
+    <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"><%= vehicle.brand %> <%= vehicle.model %></h5>
+    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Tipo: <%= vehicle.type %></p>
+    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Color: <%= vehicle.color %></p>
+  </div>
 </div>

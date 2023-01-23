@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      @title = 'Viajes'
+      @title = 'Próximos viajes'
       @trips = Trip.all
       render "dashboard"
     else
@@ -12,8 +12,5 @@ class HomeController < ApplicationController
     end
   end
 
-  def dashboard
-    @title = 'Viajes'
-    @trips = Trip.all
-  end
+  def dashboard;end
 end
