@@ -107,4 +107,19 @@ es:
         color:
           one: Color
           black: negro
+          silver: plata
+          gray: gris
+          white: blanco
+          maroon: granate
+          red: rojo
+          purple: morado
+          fuchsia: fucsia
+          green: verde
+          lime: lima
+          olive: oliva
+          yellow: amarillo
+          navy: navy
+          blue: azul
+          teal: verde azulado
+          aqua: agua
 
