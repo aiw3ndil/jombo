@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_24_133742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "trip_id", null: false
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_reservations_on_profile_id"
+    t.index ["trip_id"], name: "index_reservations_on_trip_id"
   end
 
   create_table "stops", force: :cascade do |t|
@@ -124,6 +134,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_204629) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reservations", "profiles"
+  add_foreign_key "reservations", "trips"
   add_foreign_key "stops", "trips"
   add_foreign_key "trips", "profiles"
   add_foreign_key "vehicles", "profiles"
