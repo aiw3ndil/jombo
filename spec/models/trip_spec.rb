@@ -10,6 +10,7 @@
 #  seats_available :integer          default(0)
 #  source          :string
 #  start_date      :datetime
+#  status          :string           default("open")
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  profile_id      :bigint           not null

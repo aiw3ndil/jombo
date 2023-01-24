@@ -23,7 +23,7 @@ class VehiclesController < ApplicationController
 
     respond_to do |format|
       if @vehicle.save
-        format.html { redirect_to vehicle_ur, notice: 'Vehículo creado.' }
+        format.html { redirect_to vehicle_url, notice: 'Vehículo creado.' }
         format.json { render :show, status: :created, location: @vehicle }
       else
         format.html { render :new, status: :unprocessable_entity }

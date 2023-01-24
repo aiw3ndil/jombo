@@ -8,6 +8,7 @@ class CreateTrips < ActiveRecord::Migration[7.0]
       t.string :destination
       t.integer :seats_available, default: 0
       t.text :comments
+      t.string :status, default: 'open'
       t.references :profile, null: false, foreign_key: true
 
       t.timestamps
