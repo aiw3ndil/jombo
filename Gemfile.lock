@@ -80,6 +80,7 @@ GEM
     bootsnap (1.15.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.4.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     date (3.3.3)
@@ -310,6 +311,7 @@ DEPENDENCIES
   activerecord-postgis-adapter
   annotate
   bootsnap
+  cancancan
   debug
   devise
   image_processing (~> 1.2)

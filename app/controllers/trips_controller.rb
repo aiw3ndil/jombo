@@ -4,10 +4,11 @@ class TripsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_trip, only: %i[show edit update destroy]
   before_action :set_title
+  load_and_authorize_resource
 
   # GET /trips or /trips.json
   def index
-    @trips = Trip.all
+    @trips = Trip.where
   end
 
   # GET /trips/1 or /trips/1.json

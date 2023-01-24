@@ -4,6 +4,7 @@ class VehiclesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_vehicle, only: %i[show edit update destroy]
   before_action :set_title
+  load_and_authorize_resource
 
   # GET /vehicles/1 or /vehicles/1.json
   def show; end
