@@ -8,7 +8,13 @@
 
     <%= render @trip %>
 
-    <%= link_to 'Reservar', edit_trip_path(@trip), class: "rounded-lg py-3 px-5 bg-lime-300 inline-block font-medium" %>
+    <% if @trip.profile.id != current_user.profile.id %>
+      <% if @trip.reservations.map { |t| t.trip_id == @trip.id } %>
+        <span class="rounded-lg py-3 px-5 bg-gray-300 inline-block font-medium">Reserva enviada</span>
+      <% else %>
+        <%= link_to 'Reservar', new_trip_reservation_path(@trip), class: "rounded-lg py-3 px-5 bg-lime-300 inline-block font-medium" %>
+      <% end %>
+    <% end %>
 
   </div>
 </div>

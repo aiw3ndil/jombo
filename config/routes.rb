@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :reservations
-  resources :stops
-  resources :trips
-  resource :vehicle
   resource :profile, path: 'me'
+  resource :vehicle
+  resources :trips do
+    resources :reservations
+  end
+  resources :stops
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',

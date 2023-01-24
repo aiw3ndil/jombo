@@ -30,6 +30,7 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_one :vehicle
   has_many :trips
+  has_many :reservations, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
 

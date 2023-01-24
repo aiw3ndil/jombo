@@ -22,4 +22,12 @@
 class Reservation < ApplicationRecord
   belongs_to :profile
   belongs_to :trip
+
+  validates :trip_id, uniqueness: { scope: :profile_id }
+
+  enum status: {
+    sent: 'sent',
+    approved: 'aproved',
+    refused: 'refused'
+  }
 end

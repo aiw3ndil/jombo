@@ -44,5 +44,7 @@ class Ability
     can :read, Vehicle, profile: user.profile
     can :update, Vehicle, profile: user.profile
     can :destroy, Vehicle, profile: user.profile
+
+    can :create, Reservation, profile: user.profile
   end
 end

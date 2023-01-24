@@ -63,6 +63,7 @@ es:
       trip: Viaje
       profile: Perfil
       vehicle: Vehículo
+      reservation: Reserva
     errors:
       models:
         user:
@@ -81,6 +82,10 @@ es:
             username:
               taken: El nombre de usuario ya se encuentra en uso
               blank: El usuario no puede estar en blanco
+        reservation:
+          attributes:
+            trip_id:
+              taken: Ya has realizado esta reserva
     attributes:
       profile:
         first_name: Nombre

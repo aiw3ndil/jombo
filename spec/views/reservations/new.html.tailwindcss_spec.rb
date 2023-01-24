@@ -12,7 +12,7 @@ RSpec.describe "reservations/new", type: :view do
   it "renders new reservation form" do
     render
 
-    assert_select "form[action=?][method=?]", reservations_path, "post" do
+    assert_select "form[action=?][method=?]", trip_reservations_path, "post" do
 
       assert_select "input[name=?]", "reservation[profile_id]"
 
