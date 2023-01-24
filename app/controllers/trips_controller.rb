@@ -8,7 +8,7 @@ class TripsController < ApplicationController
 
   # GET /trips or /trips.json
   def index
-    @trips = Trip.where
+    @trips = Trip.where(profile_id: current_user.profile.id)
   end
 
   # GET /trips/1 or /trips/1.json
