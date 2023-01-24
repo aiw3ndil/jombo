@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :notifications
   resource :profile, path: 'me'
   resource :vehicle
   resources :trips do

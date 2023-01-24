@@ -31,6 +31,7 @@ class Profile < ApplicationRecord
   has_one :vehicle
   has_many :trips
   has_many :reservations, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
 

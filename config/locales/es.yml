@@ -48,6 +48,8 @@ es:
   views:
     session:
       new:
+        email_placeholder: email
+        password_placeholder: contraseña
         placeholder:
           first_name: nombre
           last_name: apellido

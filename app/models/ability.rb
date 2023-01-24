@@ -40,11 +40,14 @@ class Ability
     can :update, Trip, profile: user.profile
     can :destroy, Trip, profile: user.profile
 
-    can :create, Vehicle, profile: user.profile
     can :read, Vehicle, profile: user.profile
+    can :create, Vehicle, profile: user.profile
     can :update, Vehicle, profile: user.profile
     can :destroy, Vehicle, profile: user.profile
 
+    can :read, Reservation, profile: user.profile
     can :create, Reservation, profile: user.profile
+
+    can :read, Notification, profile: user.profile
   end
 end

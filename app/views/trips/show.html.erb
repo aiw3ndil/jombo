@@ -1,15 +1,9 @@
 <div class="mx-auto md:w-2/3">
   <div class="mx-auto">
-    <% if notice.present? %>
-      <div class="bg-amber-100 border-l-4 border-orange-500 text-orange-700 p-4 mb-4">
-        <p><%= notice %></p>
-      </div>
-    <% end %>
-
     <%= render @trip %>
 
     <% if @trip.profile.id != current_user.profile.id %>
-      <% if @trip.reservations.map { |t| t.trip_id == @trip.id } %>
+      <% if @trip.reservations.map { |t| t.trip_id == @trip.id }.present? %>
         <span class="rounded-lg py-3 px-5 bg-gray-300 inline-block font-medium">Reserva enviada</span>
       <% else %>
         <%= link_to 'Reservar', new_trip_reservation_path(@trip), class: "rounded-lg py-3 px-5 bg-lime-300 inline-block font-medium" %>

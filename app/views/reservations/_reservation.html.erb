@@ -1,22 +1,17 @@
-<div id="<%= dom_id reservation %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Profile:</strong>
-    <%= reservation.profile_id %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Trip:</strong>
-    <%= reservation.trip_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
-    <%= reservation.status %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this reservation", reservation, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this reservation', edit_reservation_path(reservation), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  
+  <div class="flex flex-col items-center pb-10">
+    <% if reservation.profile.avatar.present? %>
+      <%= image_tag reservation.profile.avatar, class: "mt-6 w-24 h-24 mb-3 rounded-full shadow-lg" %>
+    <% else %>
+      <%= image_tag "empty-avatar.jpg", class: "mt-6 w-24 h-24 mb-3 rounded-full shadow-lg" %>
+    <% end %>
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><%= reservation.profile.username %></h5>
+    <span class="text-sm text-gray-500 dark:text-gray-400">Quiere reservar un asiento en tu viaje.</span>
+    <div class="flex mt-4 space-x-3 md:mt-6">
+        <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Aceptar</a>
+        <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Rechazar</a>
+    </div>
+  </div>
 </div>
