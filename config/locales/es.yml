@@ -94,6 +94,7 @@ es:
       trip:
         start_date: Fecha de inicio
         source: Origen
+        stops: Paradas
         destination: Destino
         seats_available: Asientos disponibles
         comments: Comentarios

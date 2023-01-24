@@ -25,6 +25,9 @@
 #
 class Trip < ApplicationRecord
   belongs_to :profile
+  has_many :stops, dependent: :destroy
+
+  accepts_nested_attributes_for :stops, allow_destroy: :true, reject_if: proc { |att| att['place'].blank? }
 
   enum vehicle_type: {
     open: 'open',

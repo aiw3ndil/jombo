@@ -19,13 +19,16 @@ class TripsController < ApplicationController
     if current_user.profile.vehicle.present?
       @title = "Viajes"
       @trip = Trip.new
+      @trip.stops.build
     else
       redirect_to new_vehicle_path, flash: { notice: "Primero debes añadir un vehículo" }
     end
   end
 
   # GET /trips/1/edit
-  def edit; end
+  def edit
+    @trip.stops.build
+  end
 
   # POST /trips or /trips.json
   def create
@@ -79,6 +82,6 @@ class TripsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def trip_params
-    params.require(:trip).permit(:start_date, :source, :destination, :seats_available, :stops)
+    params.require(:trip).permit(:start_date, :source, :destination, :seats_available, stops_attributes: [:id, :description, :duration, :place])
   end
 end

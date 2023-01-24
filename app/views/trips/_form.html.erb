@@ -20,25 +20,36 @@
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :start_date %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.datetime_field :start_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.datetime_field :start_date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :source %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.text_field :source, class: "autocomplete block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.text_field :source, class: "autocomplete block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :destination %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.text_field :destination, class: "autocomplete block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.text_field :destination, class: "autocomplete block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
+        </div>
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">Parada (opcional)</dt>
+          <div id="stops-container">
+            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">      
+              <%= form.fields_for :stops do |stop| %>
+                <%= render 'stops_form', form: stop %>
+                
+              <% end %>
+            </dd>
+          </div>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :seats_available %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.select :seats_available, options_for_select((1..10).step(1)), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.select :seats_available, options_for_select((1..10).step(1)), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

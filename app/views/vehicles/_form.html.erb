@@ -20,19 +20,19 @@
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :vehicle_type %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-          <%= form.select :vehicle_type, options_for_select(Vehicle.vehicle_types.keys.to_a.map { |w| [t("activerecord.attributes.vehicle.vehicle_type.#{w}"), w] }, @vehicle.vehicle_type), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+          <%= form.select :vehicle_type, options_for_select(Vehicle.vehicle_types.keys.to_a.map { |w| [t("activerecord.attributes.vehicle.vehicle_type.#{w}"), w] }, @vehicle.vehicle_type), class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :brand %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.text_field :brand, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.text_field :brand, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :model %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.text_field :model, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+            <%= form.text_field :model, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", required: true %>
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

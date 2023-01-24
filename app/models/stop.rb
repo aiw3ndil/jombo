@@ -21,5 +21,5 @@
 #  fk_rails_...  (trip_id => trips.id)
 #
 class Stop < ApplicationRecord
-  belongs_to :trip
+  belongs_to :trip, optional: true
 end
