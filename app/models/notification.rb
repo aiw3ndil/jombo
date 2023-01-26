@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: notifications
@@ -22,5 +24,5 @@
 class Notification < ApplicationRecord
   belongs_to :profile
 
-  scope :unread, -> { where("readed" == false) }
+  scope :unread, -> { where(readed: nil) }
 end

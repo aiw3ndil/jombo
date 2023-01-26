@@ -5,12 +5,12 @@ class HomeController < ApplicationController
     if user_signed_in?
       @title = 'Próximos viajes'
       @trips = Trip.coming
-      render "dashboard"
+      render 'dashboard'
     else
       @title = '¡Bienvenido a jombo!'
-      render "index"
+      render 'index'
     end
   end
 
-  def dashboard;end
+  def dashboard; end
 end

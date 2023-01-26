@@ -29,11 +29,11 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
 
-    return unless user.present?
+    return if user.blank?
 
-    can :read, Profile, user: user
-    can :create, Profile, user: user
-    can :update, Profile, user: user
+    can(:read, Profile, user:)
+    can(:create, Profile, user:)
+    can(:update, Profile, user:)
 
     can :read, Trip
     can :create, Trip, profile: user.profile

@@ -28,9 +28,9 @@ class Trip < ApplicationRecord
   has_many :stops, dependent: :destroy
   has_many :reservations, dependent: :destroy
 
-  accepts_nested_attributes_for :stops, allow_destroy: :true, reject_if: proc { |att| att['place'].blank? }
+  accepts_nested_attributes_for :stops, allow_destroy: true, reject_if: proc { |att| att['place'].blank? }
 
-  scope :coming, -> { where("start_date > ?", DateTime.now) }
+  scope :coming, -> { where('start_date > ?', DateTime.now) }
 
   enum status: {
     open: 'open',
@@ -42,5 +42,4 @@ class Trip < ApplicationRecord
     reserved_seats = Reservation.where(trip_id: id, status: 'approved').count
     seats_available - reserved_seats
   end
-
 end

@@ -55,10 +55,10 @@ gem 'bootsnap', require: false
 gem 'image_processing', '~> 1.2'
 
 # auth
+gem 'cancancan'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'cancancan'
 
 # database schema
 gem 'annotate'

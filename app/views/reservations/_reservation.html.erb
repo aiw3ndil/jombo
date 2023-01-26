@@ -7,7 +7,7 @@
     <% else %>
       <%= image_tag "empty-avatar.jpg", class: "mt-6 w-24 h-24 mb-3 rounded-full shadow-lg" %>
     <% end %>
-    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><%= reservation.profile.username %></h5>
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"><%= reservation.profile_request.username %></h5>
     <span class="p-4 text-sm text-gray-500 dark:text-gray-400">Quiere reservar un asiento para tu viaje a <%= @trip.destination %>.</span>
     <% if reservation.status == 'sent' %>
       <div class="flex mt-4 space-x-3 md:mt-6">

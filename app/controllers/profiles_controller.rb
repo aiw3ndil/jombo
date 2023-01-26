@@ -7,12 +7,10 @@ class ProfilesController < ApplicationController
   load_and_authorize_resource
 
   # GET /profiles/1 or /profiles/1.json
-  def show
-  end
+  def show; end
 
   # GET /profiles/1/edit
-  def edit
-  end
+  def edit; end
 
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
@@ -40,7 +38,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_title
-    @title = "Mi perfil"
+    @title = 'Mi perfil'
   end
 
   # Use callbacks to share common setup or constraints between actions.

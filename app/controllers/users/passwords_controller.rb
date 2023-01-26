@@ -4,7 +4,7 @@ module Users
   class PasswordsController < Devise::PasswordsController
     # GET /resource/password/new
     def new
-      @title = "Recuperar contraseña"
+      @title = 'Recuperar contraseña'
       super
     end
 

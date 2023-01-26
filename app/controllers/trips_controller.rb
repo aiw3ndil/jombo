@@ -12,17 +12,16 @@ class TripsController < ApplicationController
   end
 
   # GET /trips/1 or /trips/1.json
-  def show
-  end
+  def show; end
 
   # GET /trips/new
   def new
     if current_user.profile.vehicle.present?
-      @title = "Viajes"
+      @title = 'Viajes'
       @trip = Trip.new
       @trip.stops.build
     else
-      redirect_to new_vehicle_path, flash: { notice: "Primero debes añadir un vehículo" }
+      redirect_to new_vehicle_path, flash: { notice: 'Primero debes añadir un vehículo' }
     end
   end
 
@@ -73,7 +72,7 @@ class TripsController < ApplicationController
   private
 
   def set_title
-    @title = "Viajes"
+    @title = 'Viajes'
   end
 
   # Use callbacks to share common setup or constraints between actions.
@@ -83,6 +82,7 @@ class TripsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def trip_params
-    params.require(:trip).permit(:start_date, :source, :destination, :seats_available, stops_attributes: [:id, :description, :duration, :place])
+    params.require(:trip).permit(:start_date, :source, :destination, :seats_available,
+                                 stops_attributes: %i[id description duration place])
   end
 end
