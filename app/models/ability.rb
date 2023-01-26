@@ -50,5 +50,6 @@ class Ability
     can :update, Reservation, profile: user.profile
 
     can :read, Notification, profile: user.profile
+    can :destroy, Notification, profile: user.profile
   end
 end
