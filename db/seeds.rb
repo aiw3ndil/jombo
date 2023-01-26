@@ -9,3 +9,6 @@
 
 user = User.create(email: 'albert.oliva@gmail.com', password: '123456')
 Profile.create(first_name: "Albert", last_name: "Oliva", username: "alolve", user: user)
+
+user = User.create(email: 'narovi.terminus@gmail.com', password: '123456')
+Profile.create(first_name: "Narovi", last_name: "Terminus", username: "narovi", user: user)

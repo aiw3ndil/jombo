@@ -72,10 +72,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_212218) do
   create_table "reservations", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "trip_id", null: false
+    t.bigint "profile_request_id", null: false
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_reservations_on_profile_id"
+    t.index ["profile_request_id"], name: "index_reservations_on_profile_request_id"
     t.index ["trip_id"], name: "index_reservations_on_trip_id"
   end
 
@@ -147,6 +149,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_24_212218) do
   add_foreign_key "notifications", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "reservations", "profiles"
+  add_foreign_key "reservations", "profiles", column: "profile_request_id"
   add_foreign_key "reservations", "trips"
   add_foreign_key "stops", "trips"
   add_foreign_key "trips", "profiles"

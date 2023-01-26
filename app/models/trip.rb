@@ -38,4 +38,9 @@ class Trip < ApplicationRecord
     canceled: 'canceled'
   }
 
+  def free_seats
+    reserved_seats = Reservation.where(trip_id: id, status: 'approved').count
+    seats_available - reserved_seats
+  end
+
 end

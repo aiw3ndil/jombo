@@ -24,10 +24,11 @@ class ReservationsController < ApplicationController
   # POST /reservations or /reservations.json
   def create
     @reservation = @trip.reservations.build(reservation_params)
-    @reservation.profile_id = current_user.profile.id
+    @reservation.profile_id = @trip.profile.id
+    @reservation.profile_request_id = current_user.profile.id
     @reservation.trip_id = @trip.id
     @reservation.status = 'sent'
-    Notification.create(message: 'El usuario prueba ha solicitado una reserva', url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
+    Notification.create(message: 'El usuario "#{current_user.profile.username}" ha solicitado una reserva', url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
 
     respond_to do |format|
       if @reservation.save
