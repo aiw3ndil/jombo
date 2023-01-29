@@ -96,16 +96,6 @@ Rails.application.configure do
   # SMTP configuration
   config.action_mailer.default_url_options = { host: 'jombo.es', port: 80 }
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'ssl0.ovh.net',
-    port: 465,
-    domain: 'jombo.es',
-    user_name: 'soporte@jombo.es',
-    password: Rails.application.credentials[:smtp_password],
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    open_timeout: 5,
-    read_timeout: 5
-  }
+  config.action_mailer.delivery_method = :sendmail
+
 end
