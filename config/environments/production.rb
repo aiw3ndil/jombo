@@ -96,6 +96,15 @@ Rails.application.configure do
   # SMTP configuration
   config.action_mailer.default_url_options = { host: 'jombo.es', port: 80 }
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :SMTP
+
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp-relay.sendinblue.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => 'albert.oliva@gmail.com',
+    :password       => Rails.application.credentials.smtp_password,
+    :enable_starttls_auto => true
+  }
 
 end
