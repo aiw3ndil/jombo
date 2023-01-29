@@ -36,10 +36,6 @@ class Reservation < ApplicationRecord
     refused: 'refused'
   }
 
-  def current_user
-    User.find(session[:user_id])
-  end
-
   def profile_request
     Profile.find(profile_request_id)
   end

@@ -31,6 +31,8 @@ class ReservationsController < ApplicationController
     Notification.create(message: "El usuario #{current_user.profile.username} ha solicitado una reserva",
                         url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
 
+    ProfileMailer.with(user: current_user, trip: @trip).reservation_sent.deliver_now
+
     respond_to do |format|
       if @reservation.save
         format.html { redirect_to trip_url(@trip), notice: 'Reserva enviada.' }
@@ -48,9 +50,13 @@ class ReservationsController < ApplicationController
     when 'approved'
       Notification.create(message: "Tu solicitud para el viaje #{@trip.destination} ha sido aceptada.",
                           url: trip_reservations_path(@trip), profile_id: @reservation.profile_request_id)
+
+      ProfileMailer.with(trip: @trip).trip_request_approved.deliver_now
     when 'refused'
       Notification.create(message: "Tu solicitud para el viaje #{@trip.destination} ha sido rechazada.",
                           url: trip_reservations_path(@trip), profile_id: @reservation.profile_request_id)
+
+      ProfileMailer.with(trip: @trip).trip_request_refused.deliver_now
     end
 
     respond_to do |format|
