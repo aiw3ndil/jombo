@@ -5,7 +5,7 @@
     <% if @trip.profile.id != current_user.profile.id %>
       <% if @trip.reservations.map { |r| r.profile_request_id == current_user.profile.id }.first %>
         <span class="rounded-lg py-3 px-5 bg-gray-300 inline-block font-medium">Reserva enviada</span>
-      <% else %>
+      <% elsif @trip.free_seats > 0 %>
         <%= link_to 'Reservar', new_trip_reservation_path(@trip), class: "rounded-lg py-3 px-5 bg-lime-300 inline-block font-medium" %>
       <% end %>
     <% end %>
