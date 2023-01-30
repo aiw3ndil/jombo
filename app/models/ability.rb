@@ -34,6 +34,7 @@ class Ability
     can(:read, Profile, user:)
     can(:create, Profile, user:)
     can(:update, Profile, user:)
+    can(:reservations, Profile, user:)
 
     can :read, Trip
     can :create, Trip, profile: user.profile

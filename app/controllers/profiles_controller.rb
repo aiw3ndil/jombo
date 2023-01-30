@@ -35,6 +35,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def reservations
+    @reservations = Reservation.where(profile_request_id: current_user.profile)
+  end
+
   private
 
   def set_title
