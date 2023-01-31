@@ -1,15 +1,13 @@
 <div class="flex flex-row max-w-4xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-10">
 <div class="basis-3/4">
-  <a href="#">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= trip.source %> - <%= trip.destination %></h5>
-  </a>
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= I18n.l(trip.start_date, locale: :es, format: :long) %></p>
+  <h5 class="mb-2 text-md md:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= trip.source %> - <%= trip.destination %></h5>
+  <p class="mb-3 text-sm md:text-md lg:text-lg font-normal text-gray-700 dark:text-gray-400"><%= I18n.l(trip.start_date, locale: :es, format: :long) %></p>
   <% if trip.profile.avatar.present? %>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= image_tag current_user.profile.avatar, class: "h-12 w-12 rounded-full" %></p>
     <% else %>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Conductor: <%= trip.profile.username %></p>
+    <p class="mb-3 text-sm md:text-md lg:text-lg font-normal text-gray-700 dark:text-gray-400">Conductor: <%= trip.profile.username %></p>
   <% end %>
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Asientos disponibles: <%= trip.free_seats %></p>
+  <p class="mb-3 text-sm md:text-md lg:text-lg font-normal text-gray-700 dark:text-gray-400">Asientos disponibles: <%= trip.free_seats %></p>
   <% if trip.comments.present? %>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comentarios: <%= trip.comments %></p>
   <% end %>

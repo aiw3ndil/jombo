@@ -3,12 +3,12 @@
   
   <div class="mb-6 w-96">
     <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.email_placeholder') %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-full p-2.5", placeholder: t('views.session.new.email_placeholder') %>
   </div>
 
   <div class="mb-6 w-96">
     <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
-    <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-full p-2.5", placeholder: t('views.session.new.password_placeholder') %>
   </div>
 
   <% if devise_mapping.rememberable? %>

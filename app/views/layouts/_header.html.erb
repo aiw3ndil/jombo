@@ -98,6 +98,8 @@
         <% if user_signed_in? %>
           <%= link_to "Mi perfil", profile_path, method: :delete, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"  %>
 
+          <%= link_to "Crear viaje", new_trip_path, method: :delete, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"  %>
+
           <% if current_user.profile.vehicle.present? %>
             <%= link_to "Mi vehículo", vehicle_path, method: :delete, class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white" %>
           <% else %>
@@ -117,7 +119,7 @@
 
 <header class="bg-white shadow">
   <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold tracking-tight text-gray-900"><%= @title %></h1>
+    <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900"><%= @title %></h1>
   </div>
 </header>
 

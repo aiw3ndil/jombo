@@ -3,6 +3,7 @@
 class ReservationsController < ApplicationController
   before_action :get_trip
   before_action :set_reservation, only: %i[show edit update destroy]
+  before_action :set_title
   load_and_authorize_resource
 
   # GET /reservations or /reservations.json
@@ -81,6 +82,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def set_title
+    @title = 'Reservas'
+  end
 
   def get_trip
     @trip = Trip.find(params[:trip_id])
