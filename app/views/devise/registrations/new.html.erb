@@ -34,6 +34,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: t('views.session.new.placeholder.password_confirmation') %>
   </div>
 
+  <%- if devise_mapping.omniauthable? %>
+
   <%= f.submit "Registrarte", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
+
+  <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "Registrate con #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
+    <% end %>
+  <% end %>
 </form>
 <% end %>
