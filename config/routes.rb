@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: 'home#index'
   get '/contact', to: 'home#contact'
+  get '/privacy', to: 'home#privacy'
 end
