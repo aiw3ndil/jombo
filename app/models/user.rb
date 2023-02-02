@@ -53,8 +53,8 @@ class User < ApplicationRecord
     user = User.where(email: auth.info.email).first
     user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email,
                           password: Devise.friendly_token[0, 20])
-    user.profile = Profile.update(first_name: name_split[1], last_name: name_split[0])
-    image = URI.parse(auth.info.image).open
-    user.profile.avatar.attach(io: image, filename: "foo.jpg")
+    #user.profile = Profile.update(first_name: name_split[1], last_name: name_split[0])
+    #image = URI.parse(auth.info.image).open
+    #user.profile.avatar.attach(io: image, filename: "foo.jpg")
   end
 end
