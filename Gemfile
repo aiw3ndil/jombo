@@ -59,7 +59,7 @@ gem 'image_processing', '~> 1.2'
 gem 'cancancan'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # database schema
 gem 'annotate'
