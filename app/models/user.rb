@@ -49,11 +49,10 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
 
   def self.from_omniauth(auth)
-    name_split = auth.info.name.split
     user = User.where(email: auth.info.email).first
     user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email,
                           password: Devise.friendly_token[0, 20])
-    user.profile ||= Profile.create(first_name: name_split[1], last_name: name_split[0], user_id: user.id)
+    user.profile ||= Profile.create(first_name: auth.info.first_name, last_name: auth.info.last_name, user_id: user.id)
     if !user.profile.avatar.present?
       image = URI.parse(auth.info.image).open
       user.profile.avatar.attach(io: image, filename: "foo.jpg")
