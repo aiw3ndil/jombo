@@ -19,7 +19,9 @@
       <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6">
         <% if user_signed_in? %>
-          <div class="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"><%= current_user.profile.notifications.unread.count %></div>
+          <%if current_user.profile.notifications.present? %>
+            <div class="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"><%= current_user.profile.notifications.unread.count %></div>
+          <% end %>
           <a href="/notifications" class="inline-flex rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="sr-only">View notifications</span>
             <!-- Heroicon name: outline/bell -->
