@@ -42,20 +42,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
          :trackable
-  devise :omniauthable, omniauth_providers: [:google_oauth2]
+  devise :omniauthable, omniauth_providers: %i[facebook]
 
   has_one :profile, dependent: :destroy
 
   accepts_nested_attributes_for :profile
 
-  def self.create_from_provider_data(provider_data)
-    where(provider: provider_data.provider, uid: provider_data.uid).first_or_create  do |user|
-      user.email = provider_data.info.email
-      user.password = Devise.friendly_token[0, 20]
-
-      user.profile = Profile.update(first_name: provider_data.info.first_name, last_name: provider_data.info.last_name)
-      image = URI.parse(provider_data.info.image).open
-      user.profile.avatar.attach(io: image, filename: "foo.jpg")
-    end
+  def self.from_omniauth(auth)
+    name_split = auth.info.name.split
+    user = User.where(email: auth.info.email).first
+    user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email,
+                          password: Devise.friendly_token[0, 20])
+    user.profile = Profile.update(first_name: name_split[1], last_name: name_split[0])
+    image = URI.parse(auth.info.image).open
+    user.profile.avatar.attach(io: image, filename: "foo.jpg")
   end
 end
