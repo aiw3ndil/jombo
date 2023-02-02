@@ -53,9 +53,9 @@ class User < ApplicationRecord
       user.email = provider_data.info.email
       user.password = Devise.friendly_token[0, 20]
 
-      user.profile = Profile.update(first_name: provider_data.info.first_name, last_name: provider_data.info.last_name)
-      image = URI.parse(provider_data.info.image).open
-      user.profile.avatar.attach(io: image, filename: "foo.jpg")
+      #user.profile = Profile.update(first_name: provider_data.info.first_name, last_name: provider_data.info.last_name)
+      #image = URI.parse(provider_data.info.image).open
+      #user.profile.avatar.attach(io: image, filename: "foo.jpg")
     end
   end
 end
