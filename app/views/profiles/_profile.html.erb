@@ -9,7 +9,7 @@
       <dt class="text-sm font-medium text-gray-500">Foto de perfil</dt>
       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
         <% if profile.avatar.present? %>
-          <%= image_tag profile.avatar %>
+          <%= image_tag profile.avatar, class: "h-40 w-40 rounded-full" %>
         <% else %>
         <div class="my-5">
           <%= form_with(model: profile, class: "contents") do |form| %>
