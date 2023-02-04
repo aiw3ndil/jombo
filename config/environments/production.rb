@@ -99,12 +99,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    :address        => 'smtp-relay.sendinblue.com',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => 'albert.oliva@gmail.com',
-    :password       => Rails.application.credentials.smtp_password,
-    :enable_starttls_auto => true
+    address: 'smtp-relay.sendinblue.com',
+    port: '587',
+    authentication: :plain,
+    user_name: 'albert.oliva@gmail.com',
+    password: Rails.application.credentials.smtp_password,
+    enable_starttls_auto: true
   }
-
 end

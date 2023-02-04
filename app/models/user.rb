@@ -55,10 +55,11 @@ class User < ApplicationRecord
     user ||= User.create!(provider: auth.provider, uid: auth.uid, email: auth.info.email,
                           password: Devise.friendly_token[0, 20])
     username = "#{auth.info.first_name}.#{auth.info.last_name}".downcase
-    user.profile ||= Profile.create(first_name: auth.info.first_name, last_name: auth.info.last_name, username: username, user_id: user.id)
-    if !user.profile.avatar.present?
+    user.profile ||= Profile.create(first_name: auth.info.first_name, last_name: auth.info.last_name,
+                                    username:, user_id: user.id)
+    if user.profile.avatar.blank?
       image = URI.parse(auth.info.image).open
-      user.profile.avatar.attach(io: image, filename: "foo.jpg")
+      user.profile.avatar.attach(io: image, filename: 'foo.jpg')
     end
     user
   end

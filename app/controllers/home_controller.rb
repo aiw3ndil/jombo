@@ -15,6 +15,6 @@ class HomeController < ApplicationController
   def dashboard; end
 
   def privacy; end
-  
+
   def contact; end
 end

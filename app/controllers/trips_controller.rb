@@ -61,6 +61,15 @@ class TripsController < ApplicationController
 
   # DELETE /trips/1 or /trips/1.json
   def destroy
+    @trip.reservations.each do |reservation|
+      next unless reservation.status == 'approved'
+
+      # Send Email to reservation.profile_request.user.email
+      Notification.create(message: "El usuario #{reservation.profile.username} ha cancelado el viaje",
+                          url: trips_path, profile_id: reservation.profile_request_id)
+
+      ProfileMailer.with(trip: @trip, reservation: @reservation).trip_canceled.deliver_now
+    end
     @trip.destroy
 
     respond_to do |format|

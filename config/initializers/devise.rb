@@ -264,7 +264,7 @@ Devise.setup do |config|
   #
   # The "*/*" below is required to match Internet Explorer requests.
   config.navigational_formats = ['*/*', :html, :turbo_stream]
-    
+
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
@@ -273,8 +273,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :google_oauth2, Rails.application.credentials.google[:CLIENT_ID], Rails.application.credentials.google[:CLIENT_SECRET], {
-    scope: "userinfo.email,userinfo.profile",
-    prompt: "select_account"
+    scope: 'userinfo.email,userinfo.profile',
+    prompt: 'select_account'
   }
 
   # ==> Warden configuration
