@@ -20,7 +20,7 @@ class ProfileMailer < ApplicationMailer
 
   def trip_canceled
     @trip = params[:trip]
-    @reservation = params[:trip]
+    @reservation = params[:reservation]
 
     mail(to: @reservation.profile_request.user.email, subject: "El usuario #{@reservation.profile.username} ha cancelado el viaje")
   end
