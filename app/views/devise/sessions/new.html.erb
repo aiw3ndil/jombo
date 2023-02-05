@@ -28,10 +28,10 @@
   <%= link_to "He olvidado mi contraseña", new_password_path(resource_name), class: "mb-4" %><br />
   <% end %>
 
-
   <%= f.submit "Acceder", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
 
-  <%= link_to "Accede con Google", user_google_oauth2_omniauth_authorize_path, class: "text-white bg-neutral-400 hover:bg-neutral-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
-
+  <div class="flex">
+    <%= link_to "Accede con Google", user_google_oauth2_omniauth_authorize_path, class: "text-white bg-neutral-400 hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center" %>
+  </div>
 </form>
 <% end %>
