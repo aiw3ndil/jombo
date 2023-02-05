@@ -1,1 +1,1 @@
-Rails.application.config.session_store :cookie_store, key: '_jombo_session', domain: '.jombo.es'
+Rails.application.config.session_store :cookie_store, key: '_jombo_session', domain: :all, tld_length: 2
