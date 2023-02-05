@@ -64,7 +64,11 @@ class VehiclesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_vehicle
-    @vehicle = current_user.profile.vehicle
+    if current_user.profile.vehicle.present?
+      @vehicle = current_user.profile.vehicle
+    else
+      redirect_to new_vehicle_path
+    end
   end
 
   # Only allow a list of trusted parameters through.
