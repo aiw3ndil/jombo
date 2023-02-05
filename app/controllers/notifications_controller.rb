@@ -6,7 +6,7 @@ class NotificationsController < ApplicationController
 
   # GET /notifications or /notifications.json
   def index
-    @notifications = current_user.profile.notifications
+    @notifications = current_user.profile.notifications.order(created_at: :desc)
     Notification.where(profile_id: current_user.profile.id).update_all(readed: true)
   end
 
