@@ -89,6 +89,8 @@ class ReservationsController < ApplicationController
 
   def get_trip
     @trip = Trip.find(params[:trip_id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to notifications_path
   end
 
   # Use callbacks to share common setup or constraints between actions.
