@@ -68,7 +68,7 @@ class TripsController < ApplicationController
       Notification.create(message: "El usuario #{reservation.profile.username} ha cancelado el viaje",
                           url: trips_path, profile_id: reservation.profile_request_id)
 
-      ProfileMailer.with(trip: @trip, reservation: reservation).trip_canceled.deliver_now
+      ProfileMailer.with(trip: @trip, reservation:).trip_canceled.deliver_now
     end
     @trip.destroy
 

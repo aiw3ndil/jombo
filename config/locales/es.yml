@@ -106,6 +106,8 @@ es:
         seats_available: Asientos disponibles
         comments: Comentarios
       vehicle:
+        brand: Marca
+        model: Modelo
         vehicle_type:
           one: Tipo de vehículo
           car: coche

@@ -33,7 +33,7 @@ class ReservationsController < ApplicationController
     respond_to do |format|
       if @reservation.save
         Notification.create(message: "El usuario #{current_user.profile.username} ha solicitado una reserva",
-        url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
+                            url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
 
         ProfileMailer.with(user: current_user, trip: @trip, reservation: @reservation).reservation_sent.deliver_now
         format.html { redirect_to trip_url(@trip), notice: 'Reserva enviada.' }

@@ -12,21 +12,23 @@ class ProfileMailer < ApplicationMailer
     @trip = params[:trip]
     @reservation = params[:reservation]
 
-    mail(to: @reservation.profile_request.user.email, subject: "Tu solicitud para el viaje #{@trip.destination} ha sido aprobada.")
+    mail(to: @reservation.profile_request.user.email,
+         subject: "Tu solicitud para el viaje #{@trip.destination} ha sido aprobada.")
   end
 
   def trip_request_refused
     @trip = params[:trip]
     @reservation = params[:reservation]
 
-    mail(to: @reservation.profile_request.user.email, subject: "Tu solicitud para el viaje #{@trip.destination} ha sido rechazada.")
+    mail(to: @reservation.profile_request.user.email,
+         subject: "Tu solicitud para el viaje #{@trip.destination} ha sido rechazada.")
   end
 
   def trip_canceled
     @trip = params[:trip]
     @reservation = params[:reservation]
 
-    mail(to: @reservation.profile_request.user.email, subject: "El usuario #{@reservation.profile.username} ha cancelado el viaje")
+    mail(to: @reservation.profile_request.user.email,
+         subject: "El usuario #{@reservation.profile.username} ha cancelado el viaje")
   end
-
 end
