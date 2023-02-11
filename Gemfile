@@ -64,6 +64,9 @@ gem 'omniauth-google-oauth2'
 # database schema
 gem 'annotate'
 
+# error reporting
+gem 'rollbar'
+
 group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
