@@ -67,6 +67,9 @@ gem 'annotate'
 # error reporting
 gem 'rollbar'
 
+# XML Sitemap
+gem 'sitemap_generator'
+
 group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
