@@ -5,9 +5,16 @@ module Users
     before_action :configure_sign_up_params, only: [:create]
 
     def new
+      @title = t('views.registrations.new.title')
+      
       build_resource({})
       resource.build_profile
       respond_with resource
+    end
+    
+    def create
+      @title = t('views.registrations.new.title')
+      super
     end
 
     protected

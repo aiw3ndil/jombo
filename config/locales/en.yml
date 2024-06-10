@@ -30,4 +30,260 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    footer:
+      privacy: Política de Privacidad
+      blog: Blog
+      contact: Contacto
+      copyright: © Jombo. Todos los derechos reservados.
+    header:
+      home: Home
+      new_trip: Crear viaje
+      sign_in: Acceder
+      view_notifications: Ver notificaciones
+      profile: Mi perfil
+      vehicle: Mi vehículo
+      trips: Mis viajes
+      reservations: Mis reservas
+      destroy_user_session: Salir
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Editar %{model}"
+      delete: Eliminar
+      vehicle:
+        create: Nuevo vehículo
+        update: Editar
+      trip:
+        update: Editar
+        delete: Eliminar
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%A %d de %B"
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+  time:
+    formats:
+      default: "%H:%M"
+      long: "%B %d, %Y %H:%M"
+  controllers:
+    vehicle:
+      title: Mi vehículo
+      created: Vehículo creado
+      updated: Vehículo actualizado
+      deleted: Vehículo eliminado
+    profile:
+      title: Mi perfil
+    trip:
+      title: Viajes
+      created: El viaje ha sido creado
+      updated: El viaje se ha actualizado
+      deleted: El viaje ha sido eliminado
+    notifications:
+      deleted: La notificación ha sido eliminada.
+    reservation:
+      title: Reservas
+      created: Reserva enviada
+      updated: Reserva actualizada
+      deleted: Reserva eliminada
+  views:
+    home:
+      title: ¡Bienvenido a jombo!
+      text1: Comparte coche de forma altruista y sin exponer tus datos personales.
+      text2: Viaja por toda España gratis y respetando el medioambiente.
+      text3: Nuestra filosofía es ofrecer viajes gratis, pero si quieres, puedes cobrar.
+      text4: Para una mayor credibilidad puedes verificar tu usuario (tus datos permanecerán seguros).
+      text5: Te dejamos elegir que datos quieres mostrar a los demás usuarios.
+    dashboard:
+      title: Próximos viajes
+      no_trips: ¡Vaya, parece que aún no hay ningún viaje!
+      new_trip: Crear viaje
+      trip_view_more: Ver más
+      trip_driver: Conductor
+    notifications:
+      show:
+        edit: Editar esta notificación
+        delete: Eliminar esta notificación
+        back: Volver
+    profiles:
+      reservations:
+        no_reservations: ¡Vaya, parece que aún no has hecho ningúna reserva!
+      show:
+        subtitle: Información del perfil
+        avatar: Foto de perfil
+        email: Correo electrónico
+        username: Nombre de usuario
+        full_name: Nombre completo
+        street: Dirección
+        city: Ciudad
+        region: Región
+        postal_code: Código postal
+        country: País
+      edit:
+        subtitle: Editar el perfil
+        avatar: Foto de perfil
+        back: Volver al perfil
+    contact:
+      text1: Puedes ponerte en contacto con nosotros mediante la siguiente dirección.
+    vehicle:
+      index:
+        no_vehicles: ¡Vaya, parece que aún no has añadido nungún vehículo!
+        add_vehicle: Añadir vehículo
+      show:
+        subtitle: Vehículo
+        type: Tipo
+        color: Color
+    trip:
+      title: Viajes
+      index:
+        driver: Conductor
+        free_seats: Asientos disponibles
+        view_reservations: Ver Reservas
+      show:
+        book: Reservar
+        book_sent: Reserva enviada
+        place: Lugar
+        duration: Duración en minutos
+        description: Descripción
+        driver: Conductor
+        free_seats: Asientos disponibles
+        comments: Comentarios
+      new:
+        title: Viaje
+        no_vehicle: Primero debes añadir un vehículo
+        stop: "Parada (opcional)"
+        comments:
+          placeholder: Recogida en la calle...
+    reservations:
+      index:
+        user_reservation: Quiere reservar un asiento para tu viaje a %{destination}.
+        approve: Aprobar
+        approved: Reserva aprobada
+        refuse: Rechazar
+        refused: Reserva rechazada
+      new:
+        are_you_sure: ¿Estás seguro de que quieres hacer la reserva? Te avisaremos cuándo el conductor la haya aprobado.
+      show:
+        edit_reservation: Editar reserva
+        delete_reservation: Eliminar reserva
+        back: Volver
+    registrations:
+      new:
+        title: Registrate
+    session:
+      new:
+        title: Iniciar sesión
+        register: Registrate
+        register_google: Registrate con Google
+        forgot_password: He olvidado mi contraseña
+        login: Accede
+        login_google: Accede con Google
+        email_placeholder: email
+        password_placeholder: contraseña
+        placeholder:
+          first_name: nombre
+          last_name: apellido
+          email: email o nombre de usuario
+          username: nombre de usuario
+          password: contraseña
+          password_confirmation: confirmación de la contraseña
+  errors:
+    messages:
+      not_saved: No se ha podido guardar
+  activerecord:
+    models:
+      trip: Viaje
+      profile: Perfil
+      vehicle: Vehículo
+      reservation: Reserva
+    errors:
+      models:
+        user:
+          one: Usuario
+          other: Usuarios
+          attributes:
+            email:
+              taken: El email ya se encuentra en uso
+              blank: El email no puede estar en blanco
+            password:
+              blank: La contraseña no puede estar en blanco
+              too_short: La contraseña es demasiao corta
+            password_confirmation:
+              confirmation: Debes confirmar la contraseña
+        profile:
+          one: Perfil
+          other: Perfiles
+          attributes:
+            username:
+              taken: El nombre de usuario ya se encuentra en uso
+              blank: El usuario no puede estar en blanco
+        vehicle:
+          attributes:
+            vehicle_type:
+              blank: Selecciona un tipo de vehículo
+            brand:
+              blank: Selecciona una marca
+            model:
+              blank: Selecciona un modelo
+            color:
+              blank: Selecciona un color
+        reservation:
+          attributes:
+            trip_id:
+              taken: Ya has realizado esta reserva
+        trip:
+          attributes:
+            start_date:
+              blank: La fecha de inicio es obligatoria
+            source:
+              blank: El origen es obligatorio
+            destination:
+              blank: El destino es obligatorio
+            seats_available:
+              blank: Debes seleccionar el número de asientos disponibles
+    attributes:
+      profile:
+        first_name: Nombre
+        last_name: Apellido
+        username: Nombre de usuario
+        street: Dirección
+        city: Ciudad
+        region: Región
+        postal_code: Código postal
+        country: País
+      trip:
+        start_date: Fecha de inicio
+        source: Origen
+        stops: Paradas
+        destination: Destino
+        seats_available: Asientos disponibles
+        comments: Comentarios
+      vehicle:
+        brand: Marca
+        model: Modelo
+        vehicle_type:
+          one: Tipo de vehículo
+          car: coche
+          motorbike: motocicleta
+          truck: camión
+          bus: autobús
+        color:
+          one: Color
+          black: negro
+          silver: plata
+          gray: gris
+          white: blanco
+          maroon: granate
+          red: rojo
+          purple: morado
+          fuchsia: fucsia
+          green: verde
+          lime: lima
+          olive: oliva
+          yellow: amarillo
+          navy: navy
+          blue: azul
+          teal: verde azulado
+          aqua: agua

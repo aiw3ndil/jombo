@@ -36,7 +36,7 @@ class ReservationsController < ApplicationController
                             url: trip_reservations_path(@trip), profile_id: @trip.profile_id)
 
         ProfileMailer.with(user: current_user, trip: @trip, reservation: @reservation).reservation_sent.deliver_now
-        format.html { redirect_to trip_url(@trip), notice: 'Reserva enviada.' }
+        format.html { redirect_to trip_url(@trip), notice: t('controllers.reservation.created') }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,7 +62,7 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.update(reservation_params)
-        format.html { redirect_to trip_url(@trip), notice: 'Reserva actualizada.' }
+        format.html { redirect_to trip_url(@trip), notice: t('controllers.reservation.updated') }
         format.json { render :show, status: :ok, location: @reservation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -76,7 +76,7 @@ class ReservationsController < ApplicationController
     @reservation.destroy
 
     respond_to do |format|
-      format.html { redirect_to trip_reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.html { redirect_to trip_reservations_url, notice: t('controllers.reservation.deleted') }
       format.json { head :no_content }
     end
   end
@@ -84,7 +84,7 @@ class ReservationsController < ApplicationController
   private
 
   def set_title
-    @title = 'Reservas'
+    @title = t('controllers.reservation.title')
   end
 
   def get_trip

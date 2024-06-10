@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_title
-    @title = 'Mi perfil'
+    @title = t('controllers.profile.title')
   end
 
   # Use callbacks to share common setup or constraints between actions.

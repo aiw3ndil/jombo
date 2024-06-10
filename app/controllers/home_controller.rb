@@ -3,11 +3,11 @@
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      @title = 'Próximos viajes'
+      @title = t('views.dashboard.title')
       @trips = Trip.coming
       render 'dashboard'
     else
-      @title = '¡Bienvenido a jombo!'
+      @title = t('views.home.title')
       render 'index'
     end
   end

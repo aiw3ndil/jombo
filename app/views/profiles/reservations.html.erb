@@ -1,5 +1,5 @@
 <% if @reservations.empty? %>
-  <h1>¡Vaya, parece que aún no has hecho ningúna reserva!</h1><br>
+  <h1><%= t('views.profiles.reservations.no_reservations') %></h1><br>
 <% end %>
 
 <div class="mx-auto md:w-2/3">

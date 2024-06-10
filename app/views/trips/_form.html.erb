@@ -1,11 +1,9 @@
 <%= form_with(model: trip, class: "contents") do |form| %>
   <% if trip.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
-
       <ul>
         <% trip.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.message %></li>
         <% end %>
       </ul>
     </div>
@@ -13,7 +11,7 @@
 
   <div class="overflow-hidden bg-white shadow sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6">
-      <h3 class="text-lg font-medium leading-6 text-gray-900">Viaje</h3>
+      <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('views.trip.new.title') %></h3>
     </div>
     <div class="border-t border-gray-200">
       <dl>
@@ -36,12 +34,11 @@
           </dd>
         </div>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-sm font-medium text-gray-500">Parada (opcional)</dt>
+          <dt class="text-sm font-medium text-gray-500"><%= t('views.trip.new.stop') %></dt>
           <div id="stops-container">
             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">      
               <%= form.fields_for :stops do |stop| %>
                 <%= render 'stops_form', form: stop %>
-                
               <% end %>
             </dd>
           </div>
@@ -55,7 +52,7 @@
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
           <dt class="text-sm font-medium text-gray-500"><%= form.label :comments %></dt>
           <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <%= form.text_area :comments, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "Recogida en la calle..." %>
+            <%= form.text_area :comments, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: t('views.trip.new.comments.placeholder') %>
           </dd>
         </div>
         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

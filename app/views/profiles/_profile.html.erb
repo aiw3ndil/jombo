@@ -1,12 +1,12 @@
 <div class="overflow-hidden bg-white shadow sm:rounded-lg">
   <div class="px-4 py-5 sm:px-6">
-    <h3 class="text-lg font-medium leading-6 text-gray-900">Información del perfil</h3>
+    <h3 class="text-lg font-medium leading-6 text-gray-900"><%= t('views.profiles.show.subtitle') %></h3>
     <%= link_to 'Editar', edit_profile_path(@profile), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
   <div class="border-t border-gray-200">
     <dl>
     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-      <dt class="text-sm font-medium text-gray-500">Foto de perfil</dt>
+      <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.avatar') %></dt>
       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
         <% if profile.avatar.present? %>
           <%= image_tag profile.avatar, class: "h-40 w-40 rounded-full" %>
@@ -22,38 +22,37 @@
       </dd>
     </div>
     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-      <dt class="text-sm font-medium text-gray-500">Correo electrónico</dt>
+      <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.email') %></dt>
       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= current_user.email %></dd>
     </div>
     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-      <dt class="text-sm font-medium text-gray-500">Nombre de usuario</dt>
+      <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.username') %></dt>
       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.username %></dd>
       </div>
       <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Nombre completo</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.full_name') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= "#{profile.first_name} #{profile.last_name}"  %></dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Dirección</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.street') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.street %></dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Ciudad</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.city') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.city %></dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Región</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.region') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.region %></dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">Código postal</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.postal_code') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.postal_code %></dd>
       </div>
       <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <dt class="text-sm font-medium text-gray-500">País</dt>
+        <dt class="text-sm font-medium text-gray-500"><%= t('views.profiles.show.country') %></dt>
         <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= profile.country %></dd>
       </div>
-      
     </dl>
   </div>
 </div>

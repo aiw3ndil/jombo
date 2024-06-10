@@ -23,6 +23,11 @@
 #
 class Vehicle < ApplicationRecord
   belongs_to :profile
+  
+  validates :vehicle_type, presence: true
+  validates :brand, presence: true
+  validates :model, presence: true
+  validates :color, presence: true
 
   enum vehicle_type: {
     car: 'car',

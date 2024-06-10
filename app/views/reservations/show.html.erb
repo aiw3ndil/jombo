@@ -6,10 +6,10 @@
 
     <%= render @reservation %>
 
-    <%= link_to 'Edit this reservation', edit_reservation_path(@reservation), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to t('views.reservations.show.edit_reservation'), edit_reservation_path(@reservation), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this reservation', reservation_path(@reservation), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to t('views.reservations.show.delete_reservation'), reservation_path(@reservation), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <%= link_to 'Back to reservations', trip_reservations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to t('views.reservations.show.back'), trip_reservations_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>

@@ -27,6 +27,11 @@ class Trip < ApplicationRecord
   belongs_to :profile
   has_many :stops, dependent: :destroy
   has_many :reservations, dependent: :destroy
+  
+  validates :start_date, presence: true
+  validates :source, presence: true
+  validates :destination, presence: true
+  validates :seats_available, presence: true
 
   accepts_nested_attributes_for :stops, allow_destroy: true, reject_if: proc { |att| att['place'].blank? }
 

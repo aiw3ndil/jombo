@@ -1,8 +1,8 @@
 <div class="stop-template">
-  <p class="text-gray-500">Lugar</p>
+  <p class="text-gray-500"><%= t('views.trip.show.place') %></p>
   <%= form.text_field :place, class: "autocomplete block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  <p class="text-gray-500">Duración en minutos</p>
+  <p class="text-gray-500"><%= t('views.trip.show.duration') %></p>
   <%= form.select :duration, options_for_select((10..180).step(10)), class: " block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  <p class="text-gray-500">Descripción</p>
+  <p class="text-gray-500"><%= t('views.trip.show.description') %></p>
   <%= form.text_field :description, class: " block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 </div>

@@ -6,7 +6,7 @@ module Users
 
     # GET /resource/sign_in
     def new
-      @title = 'Iniciar sesión'
+      @title = t('views.session.new.title')
       super
     end
 

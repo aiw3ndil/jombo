@@ -17,11 +17,11 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     if current_user.profile.vehicle.present?
-      @title = 'Viajes'
+      @title = t('views.trip.title')
       @trip = Trip.new
       @trip.stops.build
     else
-      redirect_to new_vehicle_path, flash: { notice: 'Primero debes añadir un vehículo' }
+      redirect_to new_vehicle_path, flash: { notice: t('views.trip.new.no_vehicle') }
     end
   end
 
@@ -37,7 +37,7 @@ class TripsController < ApplicationController
 
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to root_url, notice: 'El viaje ha sido creado.' }
+        format.html { redirect_to root_url, notice: t('controllers.trip.created') }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class TripsController < ApplicationController
   def update
     respond_to do |format|
       if @trip.update(trip_params)
-        format.html { redirect_to trip_url(@trip), notice: 'El viaje se ha actualizado.' }
+        format.html { redirect_to trips_url, notice: t('controllers.trip.updated') }
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -73,7 +73,7 @@ class TripsController < ApplicationController
     @trip.destroy
 
     respond_to do |format|
-      format.html { redirect_to trips_url, notice: 'El viaje ha sido eliminado.' }
+      format.html { redirect_to trips_url, notice: t('controllers.trip.deleted') }
       format.json { head :no_content }
     end
   end
@@ -81,7 +81,7 @@ class TripsController < ApplicationController
   private
 
   def set_title
-    @title = 'Viajes'
+    @title = t('controllers.trip.title')
   end
 
   # Use callbacks to share common setup or constraints between actions.

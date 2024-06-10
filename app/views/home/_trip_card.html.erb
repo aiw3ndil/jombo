@@ -6,9 +6,9 @@
     <% if trip.profile.avatar.present? %>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= image_tag trip.profile.avatar, class: "h-12 w-12 rounded-full" %></p>
       <% else %>
-      <p class="mb-3 text-sm md:text-md lg:text-lg font-normal text-gray-700 dark:text-gray-400">Conductor: <%= trip.profile.username %></p>
+      <p class="mb-3 text-sm md:text-md lg:text-lg font-normal text-gray-700 dark:text-gray-400"><%= t('views.dashboard.trip_driver') %>: <%= trip.profile.username %></p>
     <% end %>
-    <%= link_to "Ver más", trip_path(trip.id), class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-2" %>
+    <%= link_to t('views.dashboard.trip_view_more'), trip_path(trip.id), class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-2" %>
     </div>
     <div class="basis-1/4 mt-2">
       <ol class="relative border-l border-amber-200 dark:border-amber-700">                  

@@ -24,7 +24,7 @@ class VehiclesController < ApplicationController
 
     respond_to do |format|
       if @vehicle.save
-        format.html { redirect_to vehicle_url, notice: 'Vehículo creado.' }
+        format.html { redirect_to vehicle_url, notice: t('controllers.vehicle.created') }
         format.json { render :show, status: :created, location: @vehicle }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +37,7 @@ class VehiclesController < ApplicationController
   def update
     respond_to do |format|
       if @vehicle.update(vehicle_params)
-        format.html { redirect_to vehicle_url, notice: 'Vehículo actualizado.' }
+        format.html { redirect_to vehicle_url, notice: t('controllers.vehicle.updated') }
         format.json { render :show, status: :ok, location: @vehicle }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class VehiclesController < ApplicationController
     @vehicle.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Vehículo eliminado.' }
+      format.html { redirect_to vehicle_url, notice: t('controllers.vehicle.deleted') }
       format.json { head :no_content }
     end
   end
@@ -59,7 +59,7 @@ class VehiclesController < ApplicationController
   private
 
   def set_title
-    @title = 'Mi vehículo'
+    @title = t('controllers.vehicle.title')
   end
 
   # Use callbacks to share common setup or constraints between actions.

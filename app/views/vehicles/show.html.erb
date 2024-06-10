@@ -2,10 +2,10 @@
   <div class="mx-auto">
     <%= render @vehicle %>
     <div class="mt-4">
-      <%= link_to 'Editar', edit_vehicle_path, class: "ml-2 mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to 'Crear viaje', new_trip_path, class: "ml-2 mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to t('helpers.submit.vehicle.update'), edit_vehicle_path, class: "ml-2 mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to t('helpers.submit.vehicle.create'), new_vehicle_path, class: "ml-2 mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <div class="inline-block ml-2">
-        <%= button_to 'Eliminar', vehicle_path, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-100 font-medium" %>
+        <%= button_to t('helpers.submit.delete'), vehicle_path, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-red-100 font-medium" %>
       </div>
     </div>
   </div>
