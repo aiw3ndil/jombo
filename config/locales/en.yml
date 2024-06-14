@@ -32,258 +32,258 @@
 en:
   layouts:
     footer:
-      privacy: Política de Privacidad
+      privacy: Privacy Policy
       blog: Blog
-      contact: Contacto
-      copyright: © Jombo. Todos los derechos reservados.
+      contact: Contact
+      copyright: © Jombo. All rights reserved.
     header:
       home: Home
-      new_trip: Crear viaje
-      sign_in: Acceder
-      view_notifications: Ver notificaciones
-      profile: Mi perfil
-      vehicle: Mi vehículo
-      trips: Mis viajes
-      reservations: Mis reservas
-      destroy_user_session: Salir
+      new_trip: Create trip
+      sign_in: Sign in
+      view_notifications: See notifications
+      profile: My profile
+      vehicle: My vehicle
+      trips: My trips
+      reservations: My bookings
+      destroy_user_session: Sign out
   helpers:
     submit:
-      create: "Crear %{model}"
-      update: "Editar %{model}"
-      delete: Eliminar
+      create: "Create %{model}"
+      update: "Edit %{model}"
+      delete: Delete
       vehicle:
-        create: Nuevo vehículo
-        update: Editar
+        create: Add vehicle
+        update: Edit
       trip:
-        update: Editar
-        delete: Eliminar
+        update: Modify
+        delete: Delete
   date:
     formats:
       default: "%Y-%m-%d"
       long: "%A %d de %B"
-    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
-    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
-    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
   time:
     formats:
       default: "%H:%M"
       long: "%B %d, %Y %H:%M"
   controllers:
     vehicle:
-      title: Mi vehículo
-      created: Vehículo creado
-      updated: Vehículo actualizado
-      deleted: Vehículo eliminado
+      title: My vehicle
+      created: Vehicle created
+      updated: Vehicle updated
+      deleted: Vehicle deleted 
     profile:
-      title: Mi perfil
+      title: My profile
     trip:
-      title: Viajes
-      created: El viaje ha sido creado
-      updated: El viaje se ha actualizado
-      deleted: El viaje ha sido eliminado
+      title: Trips
+      created: Trip created
+      updated: Trip updated
+      deleted: Trip deleted
     notifications:
-      deleted: La notificación ha sido eliminada.
+      deleted: Notification deleted
     reservation:
-      title: Reservas
-      created: Reserva enviada
-      updated: Reserva actualizada
-      deleted: Reserva eliminada
+      title: Bookings
+      created: Booking sent
+      updated: Booking updatd
+      deleted: Booking canceled
   views:
     home:
-      title: ¡Bienvenido a jombo!
-      text1: Comparte coche de forma altruista y sin exponer tus datos personales.
-      text2: Viaja por toda España gratis y respetando el medioambiente.
-      text3: Nuestra filosofía es ofrecer viajes gratis, pero si quieres, puedes cobrar.
-      text4: Para una mayor credibilidad puedes verificar tu usuario (tus datos permanecerán seguros).
-      text5: Te dejamos elegir que datos quieres mostrar a los demás usuarios.
+      title: Welcome to Jombo!
+      text1: Share a car altruistically without exposing your personal data.
+      text2: Travel across Spain for free while respecting the environment.
+      text3: Our philosophy is to offer free rides, but if you want, you can charge.
+      text4: For greater credibility, you can verify your user (your data will remain secure).
+      text5: We let you choose which data you want to show to other users.
     dashboard:
-      title: Próximos viajes
-      no_trips: ¡Vaya, parece que aún no hay ningún viaje!
-      new_trip: Crear viaje
-      trip_view_more: Ver más
-      trip_driver: Conductor
+      title: Upcoming Trips
+      no_trips: Oh, it looks like there are no trips yet!
+      new_trip: Create Trip
+      trip_view_more: View More
+      trip_driver: Driver
     notifications:
       show:
-        edit: Editar esta notificación
-        delete: Eliminar esta notificación
-        back: Volver
+        edit: Edit this notification
+        delete: Delete this notification
+        back: Back
     profiles:
       reservations:
-        no_reservations: ¡Vaya, parece que aún no has hecho ningúna reserva!
+        no_reservations: Oh, it looks like you haven't made any reservations yet!
       show:
-        subtitle: Información del perfil
-        avatar: Foto de perfil
-        email: Correo electrónico
-        username: Nombre de usuario
-        full_name: Nombre completo
-        street: Dirección
-        city: Ciudad
-        region: Región
-        postal_code: Código postal
-        country: País
+        subtitle: Profile Information
+        avatar: Profile Picture
+        email: Email
+        username: Username
+        full_name: Full Name
+        street: Address
+        city: City
+        region: Region
+        postal_code: Postal Code
+        country: Country
       edit:
-        subtitle: Editar el perfil
-        avatar: Foto de perfil
-        back: Volver al perfil
+        subtitle: Edit Profile
+        avatar: Profile Picture
+        back: Back to Profile
     contact:
-      text1: Puedes ponerte en contacto con nosotros mediante la siguiente dirección.
+      text1: You can contact us at the following address.
     vehicle:
       index:
-        no_vehicles: ¡Vaya, parece que aún no has añadido nungún vehículo!
-        add_vehicle: Añadir vehículo
+        no_vehicles: Oh, it looks like you haven't added any vehicles yet!
+        add_vehicle: Add Vehicle
       show:
-        subtitle: Vehículo
-        type: Tipo
+        subtitle: Vehicle
+        type: Type
         color: Color
     trip:
-      title: Viajes
+      title: Trips
       index:
-        driver: Conductor
-        free_seats: Asientos disponibles
-        view_reservations: Ver Reservas
+        driver: Driver
+        free_seats: Available Seats
+        view_reservations: View Reservations
       show:
-        book: Reservar
-        book_sent: Reserva enviada
-        place: Lugar
-        duration: Duración en minutos
-        description: Descripción
-        driver: Conductor
-        free_seats: Asientos disponibles
-        comments: Comentarios
+        book: Book
+        book_sent: Booking Sent
+        place: Place
+        duration: Duration in minutes
+        description: Description
+        driver: Driver
+        free_seats: Available Seats
+        comments: Comments
       new:
-        title: Viaje
-        no_vehicle: Primero debes añadir un vehículo
-        stop: "Parada (opcional)"
+        title: Trip
+        no_vehicle: You must add a vehicle first
+        stop: "Stop (optional)"
         comments:
-          placeholder: Recogida en la calle...
+          placeholder: Pickup on the street...
     reservations:
       index:
-        user_reservation: Quiere reservar un asiento para tu viaje a %{destination}.
-        approve: Aprobar
-        approved: Reserva aprobada
-        refuse: Rechazar
-        refused: Reserva rechazada
+        user_reservation: Wants to book a seat for your trip to %{destination}.
+        approve: Approve
+        approved: Booking Approved
+        refuse: Reject
+        refused: Booking Rejected
       new:
-        are_you_sure: ¿Estás seguro de que quieres hacer la reserva? Te avisaremos cuándo el conductor la haya aprobado.
+        are_you_sure: Are you sure you want to make the booking? We will notify you when the driver has approved it.
       show:
-        edit_reservation: Editar reserva
-        delete_reservation: Eliminar reserva
-        back: Volver
+        edit_reservation: Edit Booking
+        delete_reservation: Delete Booking
+        back: Back
     registrations:
       new:
-        title: Registrate
+        title: Register
     session:
       new:
-        title: Iniciar sesión
-        register: Registrate
-        register_google: Registrate con Google
-        forgot_password: He olvidado mi contraseña
-        login: Accede
-        login_google: Accede con Google
+        title: Log In
+        register: Register
+        register_google: Register with Google
+        forgot_password: I forgot my password
+        login: Log In
+        login_google: Log In with Google
         email_placeholder: email
-        password_placeholder: contraseña
+        password_placeholder: password
         placeholder:
-          first_name: nombre
-          last_name: apellido
-          email: email o nombre de usuario
-          username: nombre de usuario
-          password: contraseña
-          password_confirmation: confirmación de la contraseña
-  errors:
-    messages:
-      not_saved: No se ha podido guardar
-  activerecord:
-    models:
-      trip: Viaje
-      profile: Perfil
-      vehicle: Vehículo
-      reservation: Reserva
+          first_name: first name
+          last_name: last name
+          email: email or username
+          username: username
+          password: password
+          password_confirmation: password confirmation
     errors:
+      messages:
+        not_saved: Could not save
+    activerecord:
       models:
-        user:
-          one: Usuario
-          other: Usuarios
-          attributes:
-            email:
-              taken: El email ya se encuentra en uso
-              blank: El email no puede estar en blanco
-            password:
-              blank: La contraseña no puede estar en blanco
-              too_short: La contraseña es demasiao corta
-            password_confirmation:
-              confirmation: Debes confirmar la contraseña
-        profile:
-          one: Perfil
-          other: Perfiles
-          attributes:
-            username:
-              taken: El nombre de usuario ya se encuentra en uso
-              blank: El usuario no puede estar en blanco
-        vehicle:
-          attributes:
-            vehicle_type:
-              blank: Selecciona un tipo de vehículo
-            brand:
-              blank: Selecciona una marca
-            model:
-              blank: Selecciona un modelo
-            color:
-              blank: Selecciona un color
-        reservation:
-          attributes:
-            trip_id:
-              taken: Ya has realizado esta reserva
-        trip:
-          attributes:
-            start_date:
-              blank: La fecha de inicio es obligatoria
-            source:
-              blank: El origen es obligatorio
-            destination:
-              blank: El destino es obligatorio
-            seats_available:
-              blank: Debes seleccionar el número de asientos disponibles
+        trip: Trip
+        profile: Profile
+        vehicle: Vehicle
+        reservation: Booking
+      errors:
+        models:
+          user:
+            one: User
+            other: Users
+            attributes:
+              email:
+                taken: The email is already in use
+                blank: The email cannot be blank
+              password:
+                blank: The password cannot be blank
+                too_short: The password is too short
+              password_confirmation:
+                confirmation: You must confirm the password
+          profile:
+            one: Profile
+            other: Profiles
+            attributes:
+              username:
+                taken: The username is already in use
+                blank: The username cannot be blank
+          vehicle:
+            attributes:
+              vehicle_type:
+                blank: Select a vehicle type
+              brand:
+                blank: Select a brand
+              model:
+                blank: Select a model
+              color:
+                blank: Select a color
+          reservation:
+            attributes:
+              trip_id:
+                taken: You have already made this booking
+          trip:
+            attributes:
+              start_date:
+                blank: The start date is required
+              source:
+                blank: The source is required
+              destination:
+                blank: The destination is required
+              seats_available:
+                blank: You must select the number of available seats
     attributes:
       profile:
-        first_name: Nombre
-        last_name: Apellido
-        username: Nombre de usuario
-        street: Dirección
-        city: Ciudad
-        region: Región
-        postal_code: Código postal
-        country: País
+        first_name: First Name
+        last_name: Last Name
+        username: Username
+        street: Address
+        city: City
+        region: Region
+        postal_code: Postal Code
+        country: Country
       trip:
-        start_date: Fecha de inicio
-        source: Origen
-        stops: Paradas
-        destination: Destino
-        seats_available: Asientos disponibles
-        comments: Comentarios
+        start_date: Start Date
+        source: Source
+        stops: Stops
+        destination: Destination
+        seats_available: Available Seats
+        comments: Comments
       vehicle:
-        brand: Marca
-        model: Modelo
+        brand: Brand
+        model: Model
         vehicle_type:
-          one: Tipo de vehículo
-          car: coche
-          motorbike: motocicleta
-          truck: camión
-          bus: autobús
+          one: Vehicle Type
+          car: car
+          motorbike: motorbike
+          truck: truck
+          bus: bus
         color:
           one: Color
-          black: negro
-          silver: plata
-          gray: gris
-          white: blanco
-          maroon: granate
-          red: rojo
-          purple: morado
-          fuchsia: fucsia
-          green: verde
-          lime: lima
-          olive: oliva
-          yellow: amarillo
+          black: black
+          silver: silver
+          gray: gray
+          white: white
+          maroon: maroon
+          red: red
+          purple: purple
+          fuchsia: fuchsia
+          green: green
+          lime: lime
+          olive: olive
+          yellow: yellow
           navy: navy
-          blue: azul
-          teal: verde azulado
-          aqua: agua
+          blue: blue
+          teal: teal
+          aqua: aqua

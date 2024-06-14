@@ -10,7 +10,10 @@
         <%= link_to t('layouts.footer.blog'), "https://blog.jombo.es/", class: "hover:underline mr-12" %>
       </li>
       <li>
-          <%= link_to t('layouts.footer.contact'), contact_path, class: "hover:underline" %>
+          <%= link_to t('layouts.footer.contact'), contact_path, class: "hover:underline mr-12" %>
+      </li>
+      <li>
+          <%= link_to switch_locale_text, root_path(locale: switch_locale_path), class: "hover:underline" %>
       </li>
     </ul>
   </div>

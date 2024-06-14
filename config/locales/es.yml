@@ -87,7 +87,7 @@ es:
       title: Reservas
       created: Reserva enviada
       updated: Reserva actualizada
-      deleted: Reserva eliminada
+      deleted: Reserva cancelada
   views:
     home:
       title: ¡Bienvenido a jombo!
