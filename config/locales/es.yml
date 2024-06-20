@@ -192,6 +192,7 @@ es:
   errors:
     messages:
       not_saved: No se ha podido guardar
+      record_invalid: Es inválido
   activerecord:
     models:
       trip: Viaje
