@@ -32,8 +32,9 @@ class Trip < ApplicationRecord
   validates :source, presence: true
   validates :destination, presence: true
   validates :seats_available, presence: true
+  validates_associated :stops, if: proc { |trip| trip.stops.first.present? }
 
-  accepts_nested_attributes_for :stops, allow_destroy: true, reject_if: proc { |att| att['place'].blank? }
+  accepts_nested_attributes_for :stops, allow_destroy: true, reject_if: :all_blank
 
   scope :coming, -> { where('start_date > ?', DateTime.now) }
 

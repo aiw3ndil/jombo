@@ -154,6 +154,7 @@ es:
         title: Viaje
         no_vehicle: Primero debes añadir un vehículo
         stop: "Parada (opcional)"
+        stop_prompt: Selecciona un valor
         comments:
           placeholder: Recogida en la calle...
     reservations:
@@ -244,6 +245,14 @@ es:
               blank: El destino es obligatorio
             seats_available:
               blank: Debes seleccionar el número de asientos disponibles
+            stops:
+              invalid: Los datos de la parada no son válidos
+        stop:
+          attributes:
+            place:
+              blank: El lugar de la parada no puede estar en blanco
+            duration:
+              blank: Debes seleccionar la duración de la parada
     attributes:
       profile:
         first_name: Nombre

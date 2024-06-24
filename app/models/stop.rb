@@ -21,5 +21,8 @@
 #  fk_rails_...  (trip_id => trips.id)
 #
 class Stop < ApplicationRecord
-  belongs_to :trip, optional: true
+  belongs_to :trip
+  
+  validates :place, presence: true
+  validates :duration, presence: true
 end

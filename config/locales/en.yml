@@ -154,6 +154,7 @@ en:
         title: Trip
         no_vehicle: You must add a vehicle first
         stop: "Stop (optional)"
+        stop_prompt: Select an option
         comments:
           placeholder: Pickup on the street...
     reservations:
