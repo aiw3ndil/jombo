@@ -29,5 +29,20 @@
 require 'rails_helper'
 
 RSpec.describe Profile, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { create(:user) }
+  let(:profile) { create(:profile, user: user) }
+  
+  describe 'username' do
+    it 'must be unique and cannot be saved' do
+      profile_2 = build(:profile, username: profile.username)
+      profile_2.valid?
+      
+      expect(profile_2.errors[:username].size).to eq(1)
+      expect { profile_2.save! }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+    
+    it 'changes username' do
+      expect { profile.update(username: 'new_username') }.to change(profile, :username)
+    end
+  end
 end

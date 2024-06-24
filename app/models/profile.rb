@@ -34,6 +34,7 @@ class Profile < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
+  # TODO require country
 
   has_one_attached :avatar
 end

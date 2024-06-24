@@ -29,6 +29,9 @@ class Reservation < ApplicationRecord
   belongs_to :trip
 
   validates :trip_id, uniqueness: { scope: :profile_id }
+  validates :profile_id, presence: true
+  validates :profile_request_id, presence: true
+  validates :status, presence: true
 
   enum status: {
     sent: 'sent',
