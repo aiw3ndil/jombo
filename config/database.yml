@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: jombo_production
-  username: ubuntu
+  hostname: <%= ENV["JOMBO_DATABASE_HOSTNAME"] %>
+  database: <%= ENV["JOMBO_DATABASE_NAME"] %>
+  username: <%= ENV["JOMBO_DATABASE_USERNAME"] %>
   password: <%= ENV["JOMBO_DATABASE_PASSWORD"] %>
