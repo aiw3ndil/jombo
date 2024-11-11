@@ -11,5 +11,4 @@ development:
 
 production:
   <<: *default
-  database: jombo_production
   url: <%= ENV['DATABASE_URL'] %>
