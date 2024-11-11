@@ -81,7 +81,8 @@ test:
 #
 production:
   <<: *default
-  hostname: <%= ENV["JOMBO_DATABASE_HOSTNAME"] %>
+  port: 5432
+  hostn: <%= ENV["JOMBO_DATABASE_HOSTNAME"] %>
   database: <%= ENV["JOMBO_DATABASE_NAME"] %>
   username: <%= ENV["JOMBO_DATABASE_USERNAME"] %>
   password: <%= ENV["JOMBO_DATABASE_PASSWORD"] %>
