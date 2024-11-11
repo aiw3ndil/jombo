@@ -80,9 +80,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  port: 5432
-  hostn: <%= ENV["JOMBO_DATABASE_HOSTNAME"] %>
-  database: <%= ENV["JOMBO_DATABASE_NAME"] %>
-  username: <%= ENV["JOMBO_DATABASE_USERNAME"] %>
-  password: <%= ENV["JOMBO_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
