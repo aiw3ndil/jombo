@@ -7,7 +7,9 @@ default: &default
 
 development:
   <<: *default
+  database: jombo_development
 
 production:
   <<: *default
+  database: jombo_production
   url: <%= ENV['DATABASE_URL'] %>
