@@ -7,7 +7,6 @@ default: &default
 
 development:
   <<: *default
-  database: jombo_development
 
 production:
   <<: *default
