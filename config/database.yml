@@ -7,6 +7,8 @@ default: &default
 
 development:
   <<: *default
+  username: aiw3ndil
+  password: local
   database: jombo_development
 
 production:
