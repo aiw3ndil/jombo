@@ -1,1 +1,1 @@
-# First and outdated version of http://jombo.es
+# First and outdated version
